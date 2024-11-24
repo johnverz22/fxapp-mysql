@@ -1,0 +1,64 @@
+/* Import a custom font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Apply the custom font to the entire form */
+.root {
+    -fx-font-family: 'Roboto', sans-serif;
+}
+
+/* Content Area */
+#contentArea {
+    -fx-padding: 20;
+    -fx-spacing: 20;
+    -fx-alignment: center;
+}
+
+#welcomeText {
+    -fx-font-size: 36px;
+}
+
+#statisticsBox {
+    -fx-spacing: 20;
+    -fx-alignment: center;
+}
+
+#statCard {
+    -fx-padding: 20;
+    -fx-background-radius: 15;
+    -fx-background-color: linear-gradient(to bottom, #ffffff, #f3f3f3);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 8, 0, 0, 4);
+    -fx-border-color: transparent;
+    -fx-border-radius: 15;
+    -fx-alignment: center;
+    -fx-pref-width: 200;
+    -fx-pref-height: 150;
+    -fx-cursor: hand;
+    -fx-transition: 0.3s ease-in-out;
+
+}
+
+#statTitle {
+    -fx-font-size: 14px;
+    -fx-text-fill: #7F8C8D;
+}
+
+#statValue {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+}
+
+/* Line Chart */
+#lineChart {
+    -fx-background-color: #ECF0F1;
+    -fx-padding: 10;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+}
+
+/* Table */
+#dataTable {
+    -fx-border-color: #34495E;
+    -fx-border-width: 2;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+}

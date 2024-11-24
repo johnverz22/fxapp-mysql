@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+
+<?import javafx.geometry.Insets?>
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" maxHeight="Infinity" maxWidth="Infinity" minHeight="-Infinity"
+      stylesheets="@../css/dashboard.css" fx:controller="com.johnverz.fxapp.controller.DashboardController" spacing="15">
+    <AnchorPane.topAnchor>10.0</AnchorPane.topAnchor>
+    <AnchorPane.leftAnchor>10.0</AnchorPane.leftAnchor>
+    <AnchorPane.rightAnchor>10.0</AnchorPane.rightAnchor>
+
+    <!-- Welcome Text -->
+    <Label text="Dashboard" id="welcomeText"/>
+
+    <!-- Statistics Section -->
+    <HBox id="statisticsBox" >
+        <padding>
+            <Insets top="10" bottom="10"/>
+        </padding>
+        <VBox id="statCard" HBox.hgrow="ALWAYS">
+            <Label text="Users" id="statTitle"/>
+            <Label text="1200" id="statValue"/>
+        </VBox>
+        <VBox id="statCard" HBox.hgrow="ALWAYS">
+            <Label text="Revenue" id="statTitle"/>
+            <Label text="\$50,000" id="statValue"/>
+        </VBox>
+        <VBox id="statCard" HBox.hgrow="ALWAYS">
+            <Label text="Feedback" id="statTitle"/>
+            <Label text="320" id="statValue"/>
+        </VBox>
+    </HBox>
+
+    <!-- Graph Section -->
+    <LineChart  fx:id="lineChart" title="Revenue Trends" prefHeight="250" prefWidth="600">
+        <xAxis>
+            <CategoryAxis label="Month"/>
+        </xAxis>
+        <yAxis>
+            <NumberAxis label="Revenue"/>
+        </yAxis>
+    </LineChart>
+
+    <!-- Table Section -->
+    <TableView  fx:id="dataTable" prefHeight="200" prefWidth="600">
+        <columns>
+            <TableColumn text="ID" prefWidth="100"/>
+            <TableColumn text="Name" prefWidth="200"/>
+            <TableColumn text="Status" prefWidth="150"/>
+            <TableColumn text="Date" prefWidth="150"/>
+        </columns>
+    </TableView>
+</VBox>

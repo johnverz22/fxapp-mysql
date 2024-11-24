@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Circle?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.geometry.Insets?>
+<HBox xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+      minWidth="-Infinity"
+      prefHeight="400.0" prefWidth="600.0" stylesheets="@../css/home.css" fx:controller="com.johnverz.fxapp.controller.HomeController">
+    <VBox fx:id ="sidebar" styleClass="sidebar" spacing="10" alignment="TOP_CENTER">
+        <padding>
+            <Insets top="50"/>
+        </padding>
+        <!-- Profile Picture -->
+        <Circle fx:id="profilePicture" radius="44.0" stroke="TRANSPARENT" strokeLineJoin="ROUND"
+                strokeType="INSIDE">
+        </Circle>
+        <Label fx:id="userName" text="User Name" prefHeight="20"/>
+
+        <!-- Separator -->
+        <Rectangle height="20.0" fill="transparent"/>
+
+        <!-- Menu Items-->
+        <Button onAction="#handelMenuClick" id="home" maxWidth="Infinity" mnemonicParsing="false"
+                styleClass="menu-item, active">
+            <graphic>
+                <HBox alignment="CENTER_LEFT" spacing="12">
+                    <FontIcon iconLiteral="fas-home" styleClass="icon"/>
+                    <Label text="Home" styleClass="menu-label"/>
+                </HBox>
+            </graphic>
+        </Button>
+
+        <Button onAction="#handelMenuClick" id="products" maxWidth="Infinity" mnemonicParsing="false"
+                styleClass="menu-item">
+            <graphic>
+                <HBox alignment="CENTER_LEFT" spacing="12">
+                    <FontIcon iconLiteral="fas-box-open" styleClass="icon"/>
+                    <Label text="Products" styleClass="menu-label"/>
+                </HBox>
+            </graphic>
+        </Button>
+
+        <Button onAction="#handelMenuClick" id="account" maxWidth="Infinity" mnemonicParsing="false"
+                styleClass="menu-item">
+            <graphic>
+                <HBox alignment="CENTER_LEFT" spacing="12">
+                    <FontIcon iconLiteral="fas-user" styleClass="icon"/>
+                    <Label text="Account" styleClass="menu-label"/>
+                </HBox>
+            </graphic>
+        </Button>
+
+
+    </VBox>
+    <AnchorPane fx:id="mainContent" prefHeight="200" prefWidth="200" HBox.hgrow="ALWAYS" >
+        <padding>
+            <Insets topRightBottomLeft="10"/>
+        </padding>
+    </AnchorPane>
+</HBox>
