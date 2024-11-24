@@ -11,7 +11,10 @@ module com.johnverz.fxapp {
     opens com.johnverz.fxapp to javafx.fxml;
     exports com.johnverz.fxapp;
 
-    opens com.johnverz.fxapp.controller to javafx.fxml, javafx.base;
-    exports com.johnverz.fxapp.controller;
+    opens com.johnverz.fxapp.controllers to javafx.fxml, javafx.base;
+    exports com.johnverz.fxapp.controllers;
+
+    opens com.johnverz.fxapp.models to javafx.fxml, javafx.base;
+    exports com.johnverz.fxapp.models;
 
 }

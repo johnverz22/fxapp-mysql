@@ -9,7 +9,7 @@
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.johnverz.fxapp.controller.ProductController" styleClass="form" stylesheets="@../css/product.css">
+      fx:controller="com.johnverz.fxapp.controllers.ProductController" styleClass="form" stylesheets="@../css/product.css">
     <AnchorPane.topAnchor>10.0</AnchorPane.topAnchor>
     <AnchorPane.leftAnchor>10.0</AnchorPane.leftAnchor>
     <AnchorPane.rightAnchor>10.0</AnchorPane.rightAnchor>
@@ -55,7 +55,7 @@
 
 
     <!-- Product Table -->
-    <TableView fx:id="productTable" prefWidth="550" >
+    <TableView fx:id="productTable" prefWidth="550" styleClass="table-view" onMouseClicked="#handleTableDoubleClick">
         <columns>
             <TableColumn fx:id="productIdColumn" text="ID"/>
             <TableColumn fx:id="productNameColumn" text="Product Name"/>

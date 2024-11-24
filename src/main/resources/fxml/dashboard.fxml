@@ -9,7 +9,7 @@
 
 <?import javafx.geometry.Insets?>
 <VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" maxHeight="Infinity" maxWidth="Infinity" minHeight="-Infinity"
-      stylesheets="@../css/dashboard.css" fx:controller="com.johnverz.fxapp.controller.DashboardController" spacing="15">
+      stylesheets="@../css/dashboard.css" fx:controller="com.johnverz.fxapp.controllers.DashboardController" spacing="15">
     <AnchorPane.topAnchor>10.0</AnchorPane.topAnchor>
     <AnchorPane.leftAnchor>10.0</AnchorPane.leftAnchor>
     <AnchorPane.rightAnchor>10.0</AnchorPane.rightAnchor>

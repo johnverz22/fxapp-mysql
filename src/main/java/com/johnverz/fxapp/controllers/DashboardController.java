@@ -1,4 +1,4 @@
-package com.johnverz.fxapp.controller;
+package com.johnverz.fxapp.controllers;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
