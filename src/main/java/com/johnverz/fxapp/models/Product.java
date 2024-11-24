@@ -29,6 +29,7 @@ public class Product extends BaseModel<Product> {
     @Override
     protected Product fromResultSet(ResultSet rs) throws SQLException {
         Category category = new Category(rs.getInt("category_id"), rs.getString("category_name"));
+
         return new Product(
                 rs.getInt("product_id"),
                 rs.getString("product_name"),

@@ -1,4 +1,4 @@
-package com.johnverz.fxapp.controller;
+package com.johnverz.fxapp.controllers;
 
 import com.johnverz.fxapp.Main;
 import com.johnverz.fxapp.utility.Database;

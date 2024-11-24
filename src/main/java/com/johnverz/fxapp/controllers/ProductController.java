@@ -1,4 +1,4 @@
-package com.johnverz.fxapp.controller;
+package com.johnverz.fxapp.controllers;
 
 import com.johnverz.fxapp.models.Category;
 import com.johnverz.fxapp.models.Product;
@@ -11,8 +11,12 @@ import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -305,4 +309,31 @@ public class ProductController {
         });
         return categoryListView;
     }
+
+
+    @FXML
+    private void handleTableDoubleClick(MouseEvent event) {
+        if (event.getClickCount() == 2) {
+            Product selectedProduct = productTable.getSelectionModel().getSelectedItem();
+            if (selectedProduct != null) {
+                // Handle the double-click event, show image of products
+                showImage(selectedProduct.getPictureFileName());
+            }
+        }
+    }
+
+    // Show Product image
+    private void showImage(String pictureFileName) {
+        Stage stage = new Stage();
+        StackPane parent = new StackPane();
+        ImageView imageView = new ImageView(new Image("file:storage/images/" + pictureFileName));
+        imageView.setFitHeight(200);
+        imageView.setPreserveRatio(true);
+        parent.getChildren().add(imageView);
+        Scene scene = new Scene(parent, 768, 480);
+        stage.setScene(scene);
+        stage.setTitle("Product Image");
+        stage.show();
+    }
 }
+
