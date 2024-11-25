@@ -33,8 +33,6 @@ public class LoginController {
 
     @FXML
     private void handleLogin() {
-        loadHomeScene("John");
-
         String username = usernameField.getText();
         String password = passwordField.getText();
 
@@ -91,6 +89,7 @@ public class LoginController {
             Scene scene = new Scene(loader.load());
 
             HomeController controller = loader.getController();
+            controller.setUsername(username);
 
             Stage stage = (Stage) usernameField.getScene().getWindow();
             stage.close();

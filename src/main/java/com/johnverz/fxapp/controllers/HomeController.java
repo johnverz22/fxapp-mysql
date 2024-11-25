@@ -43,6 +43,9 @@ public class HomeController {
         }
     }
 
+    public void setUsername(String username){
+        userName.setText(username);
+    }
     @FXML
     private void handelMenuClick(ActionEvent event){
         Button menu = (Button) event.getSource();
