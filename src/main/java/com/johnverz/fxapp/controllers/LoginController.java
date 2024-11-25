@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import org.mindrot.jbcrypt.BCrypt;
 
@@ -92,13 +93,15 @@ public class LoginController {
             HomeController controller = loader.getController();
 
             Stage stage = (Stage) usernameField.getScene().getWindow();
-            stage.setTitle("App Home");
-            stage.setMinWidth(1024);
-            stage.setMinHeight(800);
-            stage.centerOnScreen();
+            stage.close();
+            Stage newStage = new Stage();
+            newStage.setTitle("App Home");
+            newStage.setMinWidth(1024);
+            newStage.setMinHeight(Screen.getPrimary().getVisualBounds().getHeight());
+            newStage.centerOnScreen();
 
-            stage.setScene(scene);
-            stage.show();
+            newStage.setScene(scene);
+            newStage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }

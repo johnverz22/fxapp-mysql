@@ -269,7 +269,7 @@ public class ProductController {
                 newCategory.setCategoryName(categoryName);
                 try {
                     if (newCategory.save()) {
-                        categoryComboBox.getItems().add(newCategory);
+                        loadCategories();
                         categoryNameField.clear();
                     } else {
                         showError("Failed to add category.");

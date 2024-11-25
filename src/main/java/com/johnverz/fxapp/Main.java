@@ -21,7 +21,7 @@ public class Main extends Application {
 
     public static void main(String[] args)
     {
-        // (new Database()).generateUser("johnverz", "secret");
+        //(new Database()).generateUser("johnverz", "secret");
 
         launch();
     }

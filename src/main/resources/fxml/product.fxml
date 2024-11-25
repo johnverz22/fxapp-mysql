@@ -1,67 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
 <?import org.kordamp.ikonli.javafx.FontIcon?>
-<VBox xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.johnverz.fxapp.controllers.ProductController" styleClass="form" stylesheets="@../css/product.css">
+<ScrollPane xmlns:fx="http://javafx.com/fxml"
+            xmlns="http://javafx.com/javafx"
+            hbarPolicy="ALWAYS"
+            fx:controller="com.johnverz.fxapp.controllers.ProductController" styleClass="form"
+            stylesheets="@../css/product.css">
     <AnchorPane.topAnchor>10.0</AnchorPane.topAnchor>
     <AnchorPane.leftAnchor>10.0</AnchorPane.leftAnchor>
     <AnchorPane.rightAnchor>10.0</AnchorPane.rightAnchor>
-    <Label text="Product Management" styleClass="title"/>
+    <AnchorPane.bottomAnchor>10.0</AnchorPane.bottomAnchor>
 
-    <GridPane hgap="20" vgap="10" styleClass="form">
-        <!-- Product Name -->
-        <Label text="Product Name:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-        <TextField fx:id="productNameField" promptText="Enter product name"  GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="text-field"/>
+    <VBox prefHeight="700">
+        <Label text="Product Management" styleClass="title"/>
 
-        <!-- Category -->
-        <Label text="Category:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-        <HBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
-            <ComboBox fx:id="categoryComboBox" promptText="Select category" styleClass="dropdown"/>
-            <Button styleClass="button-picker" onAction="#addCategory">
-                <graphic>
-                    <FontIcon iconLiteral="fas-plus" styleClass="icon"/>
-                </graphic>
-            </Button>
-        </HBox>
-        <!-- Price -->
-        <Label text="Price:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
-        <TextField fx:id="priceField" promptText="Enter price" GridPane.columnIndex="1" GridPane.rowIndex="2" styleClass="text-field"/>
+        <GridPane hgap="20" vgap="10" styleClass="form">
+            <!-- Product Name -->
+            <Label text="Product Name:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <TextField fx:id="productNameField" promptText="Enter product name" GridPane.columnIndex="1"
+                       GridPane.rowIndex="0" styleClass="text-field"/>
 
-        <!-- Picture -->
-        <Label text="Picture File:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
-        <HBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3" >
-            <TextField editable="false" fx:id="pictureField" promptText="Select picture..." styleClass="text-field"/>
-            <Button styleClass="button-picker" onAction="#pickImage">
-                <graphic>
-                    <FontIcon iconLiteral="fas-file-image" styleClass="icon"/>
-                </graphic>
-            </Button>
-        </HBox>
+            <!-- Category -->
+            <Label text="Category:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <HBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <ComboBox fx:id="categoryComboBox" promptText="Select category" styleClass="dropdown"/>
+                <Button styleClass="button-picker" onAction="#addCategory">
+                    <graphic>
+                        <FontIcon iconLiteral="fas-plus" styleClass="icon"/>
+                    </graphic>
+                </Button>
+            </HBox>
+            <!-- Price -->
+            <Label text="Price:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+            <TextField fx:id="priceField" promptText="Enter price" GridPane.columnIndex="1" GridPane.rowIndex="2"
+                       styleClass="text-field"/>
 
-        <!-- Buttons -->
-        <HBox spacing="10" alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="4" >
-            <Button text="Save" onAction="#handleSaveButton"  HBox.hgrow="ALWAYS" styleClass="button"/>
-            <Button text="Clear" onAction="#clearForm" HBox.hgrow="ALWAYS" styleClass="button"/>
-        </HBox>
+            <!-- Picture -->
+            <Label text="Picture File:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+            <HBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                <TextField editable="false" fx:id="pictureField" promptText="Select picture..."
+                           styleClass="text-field"/>
+                <Button styleClass="button-picker" onAction="#pickImage">
+                    <graphic>
+                        <FontIcon iconLiteral="fas-file-image" styleClass="icon"/>
+                    </graphic>
+                </Button>
+            </HBox>
 
-    </GridPane>
+            <!-- Buttons -->
+            <HBox spacing="10" alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                <Button text="Save" onAction="#handleSaveButton" HBox.hgrow="ALWAYS" styleClass="button"/>
+                <Button text="Clear" onAction="#clearForm" HBox.hgrow="ALWAYS" styleClass="button"/>
+            </HBox>
+
+        </GridPane>
 
 
-    <!-- Product Table -->
-    <TableView fx:id="productTable" prefWidth="550" styleClass="table-view" onMouseClicked="#handleTableDoubleClick">
-        <columns>
-            <TableColumn fx:id="productIdColumn" text="ID"/>
-            <TableColumn fx:id="productNameColumn" text="Product Name"/>
-            <TableColumn fx:id="categoryColumn" text="Category"/>
-            <TableColumn fx:id="priceColumn" text="Price"/>
-        </columns>
-    </TableView>
+        <!-- Product Table -->
+        <TableView fx:id="productTable" prefWidth="550" onMouseClicked="#handleTableDoubleClick">
+            <columns>
+                <TableColumn fx:id="productIdColumn" text="ID"/>
+                <TableColumn fx:id="productNameColumn" text="Product Name"/>
+                <TableColumn fx:id="categoryColumn" text="Category"/>
+                <TableColumn fx:id="priceColumn" text="Price"/>
+            </columns>
+        </TableView>
 
-</VBox>
+    </VBox>
+
+
+</ScrollPane>
