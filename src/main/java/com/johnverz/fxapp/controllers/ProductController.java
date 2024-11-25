@@ -54,11 +54,13 @@ public class ProductController {
         });
 
         productNameColumn.setCellValueFactory(new PropertyValueFactory<>("productName"));
+
         categoryColumn.setCellValueFactory(cellData ->
                 cellData.getValue().getCategory() != null
                         ? new SimpleStringProperty(cellData.getValue().getCategory().getCategoryName())
                         : new SimpleStringProperty("")
         );
+
         priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
 
         // Set initial width for each column
@@ -270,6 +272,8 @@ public class ProductController {
                 try {
                     if (newCategory.save()) {
                         loadCategories();
+                        categoryListView.getItems().clear();
+                        categoryListView.setItems(getCategoryListView().getItems());
                         categoryNameField.clear();
                     } else {
                         showError("Failed to add category.");

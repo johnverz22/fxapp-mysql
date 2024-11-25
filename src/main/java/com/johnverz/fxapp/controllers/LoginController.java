@@ -73,8 +73,7 @@ public class LoginController {
             statement.setString(1, username);
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
-                String hashedPassword = resultSet.getString("password");
-                return BCrypt.checkpw(password, hashedPassword);
+                return BCrypt.checkpw(password, resultSet.getString("password"));
             }
         } catch (SQLException e) {
             e.printStackTrace();

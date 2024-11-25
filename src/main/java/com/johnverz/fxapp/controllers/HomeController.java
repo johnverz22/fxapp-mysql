@@ -55,7 +55,7 @@ public class HomeController {
         String fxmlFile = switch (menu.getId()) {
             case "home" -> "/fxml/dashboard.fxml";
             case "products" -> "/fxml/product.fxml";
-            //case "account" -> "/fxml/account.fxml";
+            case "account" -> "/fxml/order.fxml";
             default -> "";
         };
 
