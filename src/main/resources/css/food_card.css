@@ -1,0 +1,23 @@
+.food-label{
+    -fx-font-size: 20px;
+}
+.food-price{
+    -fx-font-weight: bold;
+}
+
+.card {
+    -fx-background-color: white;
+    -fx-padding: 10;
+    -fx-border-color: lightgray;
+    -fx-border-width: 1;
+    -fx-cursor: hand;
+}
+
+.card:hover {
+    -fx-background-color: lightblue;
+}
+
+.card.selected {
+    -fx-background-color: dodgerblue;
+    -fx-text-fill: white;
+}
